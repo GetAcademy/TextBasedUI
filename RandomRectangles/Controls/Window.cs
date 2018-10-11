@@ -4,6 +4,7 @@
     {
         public Window() : base()
         {
+            _margin = 1;
         }
 
         public Window(int x, int y, int width, int height)
@@ -15,6 +16,11 @@
         {
             base.AddToVirtualScreen(screen, dx, dy);
             MakeBorder(screen);
+        }
+
+        protected override void CleanupCode(VirtualScreen screen, int dx, int dy)
+        {
+            CleanUpImpl(screen, dx, dy, 1);
         }
 
         private void MakeBorder(VirtualScreen screen)
