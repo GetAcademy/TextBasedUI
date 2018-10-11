@@ -4,7 +4,7 @@ namespace RandomRectangles
 {
     public class VirtualScreenRow
     {
-        private VirtualScreenCell[] _cells;
+        private readonly VirtualScreenCell[] _cells;
         private int _screenWidth;
 
         public VirtualScreenRow(int screenWidth)
@@ -43,11 +43,16 @@ namespace RandomRectangles
 
         }
 
+        public VirtualScreenCell GetCell(int col)
+        {
+            return _cells[col];
+        }
+
         public void Show()
         {
             foreach (var cell in _cells)
             {
-                Console.Write(cell.GetCharacter());
+                Console.Write(cell.Character);
             }
             Console.WriteLine();
         }

@@ -12,7 +12,7 @@ namespace RandomRectangles
         {
             var window = new Window(1,1, 30, 10);
             var label = new Label(1, 2, 10, "Hei!");
-            window.Add(label);
+            window.Add(label);           
             var screen = new VirtualScreen(_width, _height, window);
             screen.Show();
         }

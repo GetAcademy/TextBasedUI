@@ -1,6 +1,6 @@
 ﻿namespace RandomRectangles.Controls
 {
-    public class Panel
+    public class Panel : Container
     {
     }
 }

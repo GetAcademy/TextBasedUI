@@ -5,14 +5,14 @@ namespace RandomRectangles
 {
     public class VirtualScreen
     {
-        public VirtualScreenRow[] Rows { get; }
+        private readonly VirtualScreenRow[] _rows;
 
         public VirtualScreen(int width, int height, params Window[] windows)
         {
-            Rows = new VirtualScreenRow[height];
+            _rows = new VirtualScreenRow[height];
             for (var i = 0; i < height; i++)
             {
-                Rows[i] = new VirtualScreenRow(width);
+                _rows[i] = new VirtualScreenRow(width);
             }
             foreach (var window in windows)
             {
@@ -20,10 +20,15 @@ namespace RandomRectangles
             }
         }
 
+        public VirtualScreenRow GetRow(int index)
+        {
+            return _rows[index];
+        }
+
         public void Show()
         {
             Console.Clear();
-            foreach (var row in Rows)
+            foreach (var row in _rows)
             {
                 row.Show();
             }

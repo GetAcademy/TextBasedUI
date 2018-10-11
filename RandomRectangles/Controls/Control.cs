@@ -20,5 +20,7 @@
             Width = width;
             Height = height;
         }
+
+        public abstract void AddToVirtualScreen(VirtualScreen screen, int dx = 0, int dy = 0);
     }
 }
